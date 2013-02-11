@@ -3,6 +3,8 @@
 
 \usepackage[utf8x]{inputenc}
 
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
 \begin{document}
 \begin{center}
 {\LARGE Deployment of IPv6 in Europe: Measurements, Motivations, and Challenges}\\[1em]
@@ -14,18 +16,34 @@ Supervisor: Dr. Tim Chown
 \paragraph{}
 
 In 1998 the IETF published the specification for the successor to the IPv4
-protocol; IPv6, developed to overcome the shortcomings of the IPv4 networking
-protocol. The uptake of the IPv6 however did not see
-widespread deployment until the primary shortcoming of IPv4, the limit of 3.7E9
-total usable addresses [cite bgpexpert.com], came to the fore at the start of
-2011 when the Internet Assigned Numbers Authority (IANA) allocated the last of
-its IP addresses to the Regional Internet Registries. 
+networking
+protocol; IPv6. IPv6 was developed to overcome the shortcomings of the IPv4
+protocol, primarily the limit of 3.7\e{9} total usable
+addresses\footnote[1]{http://www.bgpexpert.com/addressespercountry.php},
+an issue which came to a peak at the start of 2011 when the Internet Assigned Numbers Authority (IANA) 
+allocated the last of its IPv4 addresses to the Regional Internet Registries.
+Since then IPv6 deployment has increased as several large web companies have
+deployed IPV6 with high profile events such as World IPv6
+Day and World IPv6 Launch\footnote[2]{http://www.worldipv6launch.org/}.
 
 \paragraph{}
 
 The IPv6 address space and the allocation of subnets of IPv6 address space
 within Europe is administered by Réseaux IP Européens Network Coordination
-Centre (RIPE NCC). 
+Centre (RIPE NCC). In addition to the registry service, RIPE NCC also provide a
+range of tools and data sources to monitor and analyse internet infrastructure.
+
+\paragraph{}
+
+The primary goal of this project is to summarise existing research into the measurement
+of deployment of IPv6, motivation behind the deployment of IPv6, and challenges
+faced by organisations wanting to deploy IPv6, with a focus on the European area
+administered by RIPE NCC. Secondary goals of the project are investigating the
+use of active monitoring devices in collecting internet statistics,
+investigating the effects of Provider Independent (PI) addressing on the
+deployment of IPv6, and suggesting ways to improve the deployment of IPv6 within
+Europe.
+
 
 
 

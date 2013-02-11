@@ -34,4 +34,5 @@
 *.swp
 *.d
 *.fls
+*.temp
 project-plan.pdf

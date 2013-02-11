@@ -30,3 +30,8 @@
 *.vrb
 *.xdy
 *.tdo
+*.make
+*.swp
+*.d
+*.fls
+project-plan.pdf

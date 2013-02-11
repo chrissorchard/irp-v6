@@ -5,55 +5,29 @@
 
 \begin{document}
 \begin{center}
-{\LARGE An IRP Title}\\[1em]
+{\LARGE Deployment of IPv6 in Europe: Measurements, Motivations, and Challenges}\\[1em]
 
 Author: Chris Orchard\\
 Supervisor: Dr. Tim Chown
 \end{center}
 
-\section{Problem}
+\paragraph{}
+
+In 1998 the IETF published the specification for the successor to the IPv4
+protocol; IPv6, developed to overcome the shortcomings of the IPv4 networking
+protocol. The uptake of the IPv6 however did not see
+widespread deployment until the primary shortcoming of IPv4, the limit of 3.7E9
+total usable addresses [cite bgpexpert.com], came to the fore at the start of
+2011 when the Internet Assigned Numbers Authority (IANA) allocated the last of
+its IP addresses to the Regional Internet Registries. 
+
+\paragraph{}
+
+The IPv6 address space and the allocation of subnets of IPv6 address space
+within Europe is administered by Réseaux IP Européens Network Coordination
+Centre (RIPE NCC). 
 
 
-Eduroam is an academic wireless network deployed by many universities in the UK
-and around the world, supported at an international level by
-TERENA\footnote[1]{Trans-European Research and Education Networking Association:
-www.terena.org}. The philosophy behind eduroam
-is that any member of an academic
-institution offering the eduroam wireless network will have internet access in
-exactly the same manner in any location offering eduroam. In the UK, this
-service is provided by JANET, the national interconnect for
-universities, who maintain the national proxies used for inter-site eduroam
-authentication. The support for monitoring of this inter-site eduroam functionality by system administrators or network
-users is currently limited, with neither groups having access to detailed
-availability and diagnostic data that could assist in the maintenance and
-further adoption of eduroam in the UK.
 
-\section{Goals}
-
-The goal of this project is to create a two-part monitoring system, with a
-server side RADIUS\footnote[2]{Remote Authentication Dial In User Service,
-Defined in RFC
-2865} beacon to allow administrators to diagnose issues with their
-deployment and provide JANET with an overview of eduroam adoption progress, and
-a physical client-mode monitor that JANET can deploy at eduroam sites to test
-end-to-end connectivity via a local access-point. Basic visualisation utilities will
-also be provided as part of the project. To support the design and implementation
-stages, existing similar solutions will first be identified and evaluated to
-gain the necessary domain knowledge. The \emph{dbeacon} multicast beacon has been identified
-as a prime example for a server-side beacon.
- 
-\section{Scope}
-
-There are several activities outside of the goal definition that are worthy of
-consideration, due to their relevance to the project. Whilst these extra
-features are out of scope and will not be implemented, the monitoring tools will
-be designed to facilitate the future construction and integration of these items.
- The first is a
-mobile device based user-orientated connectivity checker, where a user can
-retrieve and contribute data about the service provision in their location. The
-second is the utilisation of RadSec\footnote[3]{Draft standard:
-http://tools.ietf.org/html/draft-ietf-radext-radsec-09}, an extension to the RADIUS specification
-that adds improved inter-site functionality via TLS tunnelling over TCP. RadSec
-is a possible successor to the existing national proxy system operated by JANET.
 
 \end{document}

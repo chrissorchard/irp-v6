@@ -32,6 +32,7 @@
 *.tdo
 *.make
 *.swp
+*.swo
 *.d
 *.fls
 *.temp

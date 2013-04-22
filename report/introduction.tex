@@ -1,40 +1,67 @@
 \section{Introduction}
 
+%An introduction with some history
 In 1998 the IETF published the specification for the successor to the IPv4
 networking protocol; IPv6. IPv6 was developed to overcome the shortcomings
-of the IPv4 protocol, primarily the limit of 3.7\e{9} total usable
+of the IPv4 protocol, primarily the limit of around 3.7\e{9} total usable
 addresses\cite{beijnum_ip} but also improves support for extensions, flow
 control and for secure and private communication\cite{rfc2460}.
 
-Despite the advantages offered by IPv6 over IPv4 deployment during the
-intervening years has been limited and the pace of
-uptake of IPv6 by end users has been disappointingly slow,  
-%possibly graph here?, also numbers, fact and quote filling
-... suggesting that ..., and ... also .... More
-recently, IPv6 deployment has started moving more quickly, widely put down to
-the exhaustion of the IPv4 address space at the start of 2011 when the Internet
-Assigned Numbers Authority (IANA) allocated the last of its IPv4 addresses to
-the Regional Internet Registries[cite, quote]. As of [date] IPv6 traffic still only makes up
-about [some-amount] of the total traffic on the internet, with the majority of
-the rest still IPv4[cite].
+%initial hopes
+Around the time the specification for IPv6 was published, it was believed that
+the standard would be quickly adopted, and by 2001 IPv6 was supported by most
+network hardware vendors and was being integrated into the operating systems of
+the time\cite{huang_ipv6_2000}\cite{durand_deploying_2001}. It was accepted even
+earlier than this that
+the transition from IPv4 to IPv6 would not be simple however, and to this effect
+the NGTrans working group produced guidance on deploying IPv6, releasing
+documents on tunnelling\cite{rfc1933}\cite{rfc2893} and routing\cite{rfc2185}. 
 
-%TODO: discuss motivation, talk about organisations involved.
+%2008: oh balls
+By 2008, 10 years after the publication of the original IPv6
+specification, it had become clear that this initial hope of a fast
+transition towards IPv6 had not been the case. Using measurements of IPv6 routing
+data and web server access data, Huston finds that although IPv6 was being
+deployed at a steady pace across the infrastructure of the internet, usage of
+IPv6 by end users was very low, with IPv6 traffic observed being equivalent to
+0.3\% of the amount of IPv4 traffic seen\cite{huston_ipv6_????}. In a similar vein, Domingues 
+et al. conclude that despite the improvements IPv6 offered over IPv4
+and the progress made by network hardware vendors and academic deployments,
+global IPv6 deployment was not on track and that ISPs were shying away from
+deploying IPv6 infrastructure\cite{domingues_is_2007}.
+
+%2013: progress has begun once again.
+Moving towards the present day the pace of IPv6 deployment has changed again, a
+change that can be heavily attributed to the exhaustion of the IPv4 address
+space at the start of 2011 when the Internet Assigned Numbers Authority (IANA)
+allocated the last of its IPv4 addresses to the Regional Internet Registries.
+Things: Allocation data from RIPE, Geoff Huston articles, world IPv6 day(s),
+possible mention of PI space.
 
 %TODO: talk about measuring deployment and why this is important
 %TODO: link this back to earlier statements about progress of deployments
+Collecting and storing data about the structure of the internet and how it is
+used is essential to gauge the progress of IPv6 deployment, and mindful of this
+fact many organisations and individuals have been collecting such data from an
+early stage of the life of IPv6... Things: how this means we can attempt to draw
+conclusions and follow deployment as described above. However, many of these
+data sets and measurement techniques have drawbacks and limitations, something
+that is also discussed extensively in academic analysis of the deployment of
+IPv6. This paper attempts to draw together some of the approaches possible for
+collecting data about the deployment of IPv6, how this data can and has been
+analysed and what the advantages and difficulties of each approach might be,
+and explore whether these measurements are sufficient and useful for progressing
+the deployment of IPv6 and if the measurements can be used in combination to
+draw further conclusions or guidance.
+
+Things: Give a quick overview of the types of measurements being discussed.
+
 
 %TODO: introduce what will be discussed, etc
-
+NOTES:
 Since then IPv6 deployment has increased as several large web companies have
 deployed IPV6 with high profile events such as World IPv6
 Day and World IPv6 Launch\footnote[2]{http://www.worldipv6launch.org/}.
 
 
-\begin{itemize}
-    \item What is IPv6?
-    \item Why should we use it? (also IPv4 exhaustion)
-    \item Overview of the current state of IPv6 deployment.
-    \item Ask questions
-    \item Enumerate types of measurement, sources of data
-    \item Citation\cite{rfc3177}
-\end{itemize}
+

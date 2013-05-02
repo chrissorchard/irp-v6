@@ -96,20 +96,46 @@ archiving data since 1999 (although this does not necessarily contain IPv6 data
 from this time) and routeviews archiving data since 2001. 
 %TODO: could talk about looking glasses here
 
-Analysis...
+To analyse the BGP routing data and use it to draw conclusions of the state of
+the deployment of IPv6, we can define two simple metrics: the number of BGP
+routes for IPv6 prefixes in the routing tables, and the number of ASs being
+advertised in the routing tables. Huston analyses the number of IPv6 routes
+between 2004 and 2008, and finds that for most of this time the number of IPv6
+routes increases linearly, but also identifies a number of exception events that
+account for large changes in the number of routes advertised such a bug that
+caused 150 abnormal routes to accumulate over time and then all be removed
+simultaneously when the issue was fixed. When making a comparison with IPv4
+routing tables, Huston also finds that there does not appear to be any
+significant growth in IPv6 over IPv4. When analysing the number of ASs announced
+in the BGP tables, Dhamdhere et al. find that between 2007 and 2012 the number
+of IPv6 ASs has grown exponentially compared to linear growth in IPv4 ASs, which
+correlates with a trend noticed in the number of ASs by Huston between mid 2007
+and 2008. In complement to the findings above, Figure \ref{fig:bgp-rirs} shows the percentage
+of ASs that advertise an IPv6 prefix globally, as collated from the RIS data set
+by RIPE NCC. The change in the rate of IPv6 deployment between 2004-2008 and
+2008-2013 is clearly visible.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.4\textwidth]{img/v6-bgp-rirs.png}
+\caption{Percentage of ASs that advertise an IPV6 prefix showing RIRs}
+\label{fig:bgp-rirs}
+\end{figure}
 
+It is also possible to combine the BGP routing data with the prefix allocation
+data to work out how the delay between an organisation being allocated a prefix
+and that prefix being advertised in the BGP routing tables. Karpilovsky et al.
+find the average time for an allocated prefix to be advertised is 173 days, much
+longer than the average of 52 days for IPv4 prefixes.
 
-However, not all prefixes refer to a single AS,
-due to route aggregation, a feature of IPv6 designed to reduce the size of the
+An issue with using BGP tables for measuring IPv6 deployment is use of route
+aggregation. Route aggregation is a feature of IPv6 designed to reduce the size of the
 global routing table by advertising the largest possible prefix where a router
-has routes to a number of component prefixes.
+has routes to a number of component prefixes. This means that a given prefix in
+the BGP routing tables may refer to more than one AS, and in particular
+connections at the edge of the internet are poorly represented in these
+tables (cite).
 
-
-- Analysis: papers, delay between allocation and advertisement
-- Data Sources: RIPE, potaroo, routeview
-- v4 comparison?
-- mention route aggregation at end as an issue?
 
 \subsection{Usage Data}
 

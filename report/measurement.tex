@@ -83,10 +83,20 @@ actually being deployed than just the prefixes allocated(CITE), as an AS must
 have deployed some IPv6 infrastructure to advertise a network whereas receiving
 a prefix allocation does not imply that the organisation is actively using it.
 
+BGP routing data has been made publicly available by a number of sources, most
+notably the routeviews[cite] project hosted by the University of Oregon in the
+US, and the Routing Information Service (RIS) project maintained by RIPE NCC.
+Each of these projects offer live views of BGP routing data from various points
+around the world, with routeviews retrieving data from 7 IPv6 enable Internet
+Exchange Points (IXPs) and the hosting University's own connection, whilst RIS
+collects data from 13 IXPs and the RIPE NCC headquarters in Amsterdam. This data
+is collected by deploying routers to these locations that peer with the IPv6
+backbone their location. Both RIS and routeviews keep historical data, with RIS
+archiving data since 1999 (although this does not necessarily contain IPv6 data
+from this time) and routeviews archiving data since 2001. 
+%TODO: could talk about looking glasses here
 
-
-
-
+Analysis...
 
 
 
@@ -96,10 +106,9 @@ global routing table by advertising the largest possible prefix where a router
 has routes to a number of component prefixes.
 
 
-
 - Analysis: papers, delay between allocation and advertisement
 - Data Sources: RIPE, potaroo, routeview
-- v4 comparison
+- v4 comparison?
 - mention route aggregation at end as an issue?
 
 \subsection{Usage Data}

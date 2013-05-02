@@ -79,14 +79,26 @@ information is propagated across the Internet.
 The information held in the routing tables can be used to gain some measure of
 the deployment of IPv6, as the routing tables provide an effective summary of
 all reachable IPv6 prefixes. This data should give a better view of how IPv6 is
-actually being deployed, rather than just the prefixes allocated(CITE).
+actually being deployed than just the prefixes allocated(CITE), as an AS must
+have deployed some IPv6 infrastructure to advertise a network whereas receiving
+a prefix allocation does not imply that the organisation is actively using it.
+
+
+
+
+
+
+
+
 However, not all prefixes refer to a single AS,
 due to route aggregation, a feature of IPv6 designed to reduce the size of the
 global routing table by advertising the largest possible prefix where a router
 has routes to a number of component prefixes.
 
+
+
 - Analysis: papers, delay between allocation and advertisement
-- Data Sources: RIPE, potaroo, (CAIDA?)
+- Data Sources: RIPE, potaroo, routeview
 - v4 comparison
 - mention route aggregation at end as an issue?
 

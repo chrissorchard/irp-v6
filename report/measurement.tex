@@ -137,22 +137,68 @@ connections at the edge of the internet are poorly represented in these
 tables (cite).
 
 
-\subsection{Usage Data \& Service Availability}
+%\subsection{Usage Data \& Service Availability}
+\subsection{User Measurements}
 
+The first two methods that we have explored look at data based on the
+infrastructure of the internet. Another perspective can be a gained by analysing
+data from the end users of the internet, whether that be individuals browsing
+the web, organisations serving those web pages, or email servers sending mail
+across the internet. Data concerning the usage and availability of services over
+IPv6 on the internet whilst not strictly representing the deployment of IPv6 in
+terms of the presence of the necessary infrastructure (although this must be
+present) but gives an insight into the deployment of IPv6 in terms of
+how much the protocol is actually used.
 
+The sources of data and the methods used in measurement of data from the users
+and service providers of the internet generally fall into two categories:
+enumerating and analysing the availability of services over IPv6 and measuring
+how much these available services are being used. Availability data can be
+collected by actively crawling the internet, whereas usage data is generally
+collected via passive means such as Netflow(cite?) or by analysing server logs.
 
--usage data is the best
--service availability is also good
--not a huge amount of analysis done?
+To gather data about the use of IPv6 by consumers, and the availability of IPv6
+networking to end users, Colitti et al. at Google added code to the Google
+website that tested IPv6 connectivity from browsers that connected to it. The
+client code connected to both a dual-stack host and an IPv4 host to find out
+whether IPv6 or IPv4 were preferred when both were available. Colitti et al.
+find that between September 2008 and September 2009 IPv6 usage remains roughly
+static between 0.2-0.25\%. Of further interest is the transport method used when
+IPv6 was used, as their analysis shows that more of half of the IPv6 accesses
+seen were conducted using the 6to4 tunnelling protocol. Another significant
+possible usage of tunnelling is where Colitti et al. find that France has the
+second highest working IPv6 ratio out of all countries surveyed, of which
+almost all accesses were listed as of type "Native/tunnel/unknown". France is
+the location of one of the single largest commercial deployment of IPv6
+infrastructure, where the ISP Free has deployed 6rd(cite) to all of its
+customers. This means that an even larger number of hosts than indicated are
+using tunnelling methods rather than native IPv6, and more specifically 6to4 or
+a variant thereof (6rd is a specialisation of 6to4 using an organisations
+global IPv6 address space). Huston also presents some usage data in his 2008
+article on IPv6 deployment, and similarly finds the amount of IPv6 traffic to
+APNIC web servers to be around 0.2\% between 2004 and 2008. Google's own data
+collected since 2008 shows a significant uptake in the usage of IPv6, going from
+the 0.2\% recorded in 2008 to 1.3\% as of May 2013, as shown in Figure
+\ref{fig:google-access}. This is an increase of over
+500\% in 5 years, which contrasts strongly against the static rate of IPv6 seen
+in the previous 4 years. The usage of the 6to4 and Teredo tunnelling mechanisms
+is also shown to have fallen to almost 0\% since 2008.
 
--tunnelling
--happy eyeballs
--browser configuration
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.4\textwidth]{img/v6-google-access.png}
+\caption{Percentage of Users accessing Google using IPv6 between 2008 and 2013}
+\label{fig:google-access}
+\end{figure}
+
+Data gathered to explore the availability of services provided over IPv6
+generally take the form of surveys performed from a single point of a large
+number of websites or domains. 
+
+-service availability sources, analysis
+
 
 -active
--passive
--web server logs
--dns server logs
 -connectivity testing: matrix
 
 -data sets smaller?

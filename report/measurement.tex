@@ -85,19 +85,20 @@ information is propagated across the Internet.
 The information held in the routing tables can be used to gain some measure of
 the deployment of IPv6, as the routing tables provide an effective summary of
 all reachable IPv6 prefixes. This data should give a better view of how IPv6 is
-actually being deployed than just the prefixes allocated(CITE), as an AS must
+actually being deployed than just the prefixes allocated\cite{karpilovsky_quantifying_2009}, as an AS must
 have deployed some IPv6 infrastructure to advertise a network whereas receiving
 a prefix allocation does not imply that the organisation is actively using it.
 
 BGP routing data has been made publicly available by a number of sources, most
-notably the routeviews[cite] project hosted by the University of Oregon in the
-US, and the Routing Information Service (RIS) project maintained by RIPE NCC.
+notably the routeviews\cite{meyer_route_2005} project hosted by the University of Oregon in the
+US, and the Routing Information Service (RIS) project maintained by RIPE
+NCC\cite{ripe_ncc_routing_????}.
 Each of these projects offer live views of BGP routing data from various points
 around the world, with routeviews retrieving data from 7 IPv6 enable Internet
 Exchange Points (IXPs) and the hosting University's own connection, whilst RIS
 collects data from 13 IXPs and the RIPE NCC headquarters in Amsterdam. This data
-is collected by deploying routers to these locations that peer with the IPv6
-backbone their location. Both RIS and routeviews keep historical data, with RIS
+is collected by deploying routers to these locations that peer with the other
+IPv6 ASs that advertise routes there. Both RIS and routeviews keep historical data, with RIS
 archiving data since 1999 (although this does not necessarily contain IPv6 data
 from this time) and routeviews archiving data since 2001. 
 %TODO: could talk about looking glasses here
@@ -110,13 +111,13 @@ between 2004 and 2008, and finds that for most of this time the number of IPv6
 routes increases linearly, but also identifies a number of exception events that
 account for large changes in the number of routes advertised such a bug that
 caused 150 abnormal routes to accumulate over time and then all be removed
-simultaneously when the issue was fixed. When making a comparison with IPv4
+simultaneously when the issue was fixed\cite{huston_ipv6_2008}. When making a comparison with IPv4
 routing tables, Huston also finds that there does not appear to be any
 significant growth in IPv6 over IPv4. When analysing the number of ASs announced
 in the BGP tables, Dhamdhere et al. find that between 2007 and 2012 the number
 of IPv6 ASs has grown exponentially compared to linear growth in IPv4 ASs, which
 correlates with a trend noticed in the number of ASs by Huston between mid 2007
-and 2008. In complement to the findings above, Figure \ref{fig:bgp-rirs} shows the percentage
+and 2008\cite{dhamdhere_measuring_2012}. To complement the findings above, Figure \ref{fig:bgp-rirs} shows the percentage
 of ASs that advertise an IPv6 prefix globally, as collated from the RIS data set
 by RIPE NCC. The change in the rate of IPv6 deployment between 2004-2008 and
 2008-2013 is clearly visible.
@@ -132,7 +133,7 @@ It is also possible to combine the BGP routing data with the prefix allocation
 data to work out how the delay between an organisation being allocated a prefix
 and that prefix being advertised in the BGP routing tables. Karpilovsky et al.
 find the average time for an allocated prefix to be advertised is 173 days, much
-longer than the average of 52 days for IPv4 prefixes.
+longer than the average of 52 days for IPv4 prefixes\cite{karpilovsky_quantifying_2009}.
 
 An issue with using BGP tables for measuring IPv6 deployment is use of route
 aggregation. Route aggregation is a feature of IPv6 designed to reduce the size of the
@@ -140,7 +141,7 @@ global routing table by advertising the largest possible prefix where a router
 has routes to a number of component prefixes. This means that a given prefix in
 the BGP routing tables may refer to more than one AS, and in particular
 connections at the edge of the internet are poorly represented in these
-tables (cite).
+tables\cite{dhamdhere_measuring_2012}.
 
 
 %\subsection{Usage Data \& Service Availability}

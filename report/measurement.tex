@@ -2,14 +2,17 @@
 
 \subsection{Prefix Allocation Data}
 
-%TODO: introduce notion of prefix!!!
-IPv6 Addresses across the internet are allocated by a hierarchy of organisations.
+IPv6 addresses used across the internet are allocated by a hierarchy of organisations.
 The Internet Assigned Numbers Authority (IANA) have authoritative control of the
 allocation of IPv6 addresses, and delegate the allocation of blocks of IPv6
 addresses to the five Regional Internet Registries (RIRs), who administer the
 address space in their region. The RIR for Europe is Réseaux IP Européens
 Network Coordination Centre (RIPE NCC), who in turn are responsible for
-allocating addresses to the Local Internet Registries (LIRs).
+allocating addresses to the Local Internet Registries (LIRs). The term prefix
+refers to to the portion of the IPv6 network prefix (the first 64 bits of an
+IPv6 address) that identifies the block of addresses, and generally also
+includes a prefix length. For example \verb+2001:630:d0::/48+ is the IPv6 prefix held by the
+University of Southampton.
 
 RIPE NCC keep records of and maintain statistics about all of the IPv6 addresses
 allocated since 1999, which can be used to as a metric for how IPv6 is being
@@ -19,12 +22,13 @@ than the size of subnets asked for). The other RIRs also maintain publicly
 available records of their IPv6 and IPv4 prefix allocations, used by Geoff
 Huston to generate and maintain historical
 reports of IPv6 allocation worldwide, dated from mid-2006 to
-present day.
+present day\cite{huston_ipv6_2013}.
 
 Analysis of this data has been performed by a number of sources. Kuhne tracks
-the number of IPv6 allocations from between 1999 and 2010, and identifies three
-phases in the allocations of, and hence requests made for IPv6 prefixes since
-RIPE started allocating IPv6 addresses. The first phase identified from 1999 to
+the number of IPv6 allocations from between 1999 and 2010 and identifies three
+phases in the allocations of and hence requests made for IPv6 prefixes since
+RIPE started allocating IPv6 addresses\cite{kuhne_interesting_2010}.
+The first phase is identified from 1999 to
 2002 as "experimental" where IPv6 and the mechanisms to support it were still
 under development. The second phase identified between 2002 and 2007 showed
 steady but low rates of adoption, that Kuhne contributes to early adopters. The
@@ -32,10 +36,11 @@ third phase identified from 2007 to the publication of the data in 2010 showed
 an accelerating allocation rate, contributed to the increasing efforts of RIRs
 to promote IPv6 in light of the approach of the exhaustion of the IPv4 address
 space. The three phases can be seen on the up to date graph of IPv6 allocations
-by month from RIPE shown in \ref{fig:alloc-month}. Karpilovsky et al. make
-similar conclusion on the allocation data, despite not making recognition of the
+by month from RIPE shown in Figure \ref{fig:alloc-month}. Karpilovsky et al. make
+similar conclusions on the allocation data, despite not recognising the
 experimental phase, Karpilovsky notes that number of allocations was linear
-until 2008 when the rate of allocation significantly increased. Karpilovsky et
+until 2008 when the rate of allocation significantly increased\cite{karpilovsky_quantifying_2009}.
+Karpilovsky et
 al. also attempt some analysis of the number of IPv6 address allocated over
 time, but find that it is not possible to draw meaningful conclusions from this
 data as it is dominated by a very small number of very large allocations.
@@ -47,7 +52,8 @@ data as it is dominated by a very small number of very large allocations.
 \label{fig:alloc-month}
 \end{figure}
 
-A factor to consider when thinking about prefix allocation is the difference
+An interesting factor that contributes to how the allocation of IPv6 prefixes is
+affecting the deployment of IPv6 is the policies surrounding the differences
 between Provider Aggregated (PA) and Provider Independent (PI) addresses. In
 IPv6 most unicast addresses are globally aggregatable, to simplify the BGP
 routing tables and ensure that the protocol can remain scalable despite the
@@ -56,11 +62,11 @@ organisations, as they require addresses to remain contiguous across
 geographically distant sites, or are not willing to renumber if they change
 internet providers. Kuhne notes that following the relaxation of requirements
 regarding PI allocation in Feburary 2012, there was a dramatic increase in the 
-number of PI allocations.
+number of PI allocations and hence overall IPv6 prefix allocations\cite{mirjam_kuhne_update_2012}.
 
 The use of RIR allocation data as a metric for the deployment of IPv6 at first
 seems to be fairly robust, but there are some caveats that must be considered.
-Firstly, allocation does not equate to use, and we must turn to other sources of
+Firstly, allocation does not equate to use, so we must turn to other sources of
 data to qualify whether the addresses allocated are actually being used. Another
 possible issue is that the allocation data published by the RIRs is generally
 for allocation to LIRs, so allocation of prefixes to end users is not shown.

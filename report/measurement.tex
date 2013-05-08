@@ -147,43 +147,44 @@ tables\cite{dhamdhere_measuring_2012}.
 %\subsection{Usage Data \& Service Availability}
 \subsection{User Measurements}
 
-The first two methods that we have explored look at data based on the
+The first two methods explored look at data based on the
 infrastructure of the internet. Another perspective can be a gained by analysing
 data from the end users of the internet, whether that be individuals browsing
 the web, organisations serving those web pages, or email servers sending mail
 across the internet. Data concerning the usage and availability of services over
 IPv6 on the internet whilst not strictly representing the deployment of IPv6 in
-terms of the presence of the necessary infrastructure (although this must be
+terms of the presence of the necessary infrastructure (although this
+infrastructure must be
 present) gives an insight into the deployment of IPv6 in terms of
-how much the protocol is actually used.
+how much the protocol is actually used rather than just how much it is supported.
 
 The sources of data and the methods used in measurement of data from the users
 and service providers of the internet generally fall into two categories:
 enumerating and analysing the availability of services over IPv6 and measuring
 how much these available services are being used. Availability data can be
 collected by actively crawling the internet, whereas usage data is generally
-collected via passive means such as Netflow(cite?) or by analysing server logs.
+collected via passive means such as Netflow\cite{shen_observations_2009} or by analysing server logs.
 
 To gather data about the use of IPv6 by consumers, and the availability of IPv6
-networking to end users, Colitti et al. at Google added code to the Google
+networking to end users, Colitti et al. at Google added code to the Google.com
 website that tested IPv6 connectivity from browsers that connected to it. The
 client code connected to both a dual-stack host and an IPv4 host to find out
-whether IPv6 or IPv4 were preferred when both were available. Colitti et al.
+whether IPv6 or IPv4 were preferred when both were available\cite{colitti_evaluating_2010}. Colitti et al.
 find that between September 2008 and September 2009 IPv6 usage remains roughly
-static between 0.2-0.25\%. Of further interest is the transport method used when
-IPv6 was used, as their analysis shows that more of half of the IPv6 accesses
+static between 0.2-0.25\%. Of further interest is how IPv6 is used when clients
+use the protocol to connect, as their analysis shows that more of half of the IPv6 accesses
 seen were conducted using the 6to4 tunnelling protocol. Another significant
 possible usage of tunnelling is where Colitti et al. find that France has the
 second highest working IPv6 ratio out of all countries surveyed, of which
 almost all accesses were listed as of type "Native/tunnel/unknown". France is
 the location of one of the single largest commercial deployment of IPv6
-infrastructure, where the ISP Free has deployed 6rd(cite) to all of its
+infrastructure, where the ISP Free has deployed 6rd\cite{rfc5569} to all of its
 customers. This means that an even larger number of hosts than indicated are
 using tunnelling methods rather than native IPv6, and more specifically 6to4 or
 a variant thereof (6rd is a specialisation of 6to4 using an organisations
 global IPv6 address space). Huston also presents some usage data in his 2008
 article on IPv6 deployment, and similarly finds the amount of IPv6 traffic to
-APNIC web servers to be around 0.2\% between 2004 and 2008. Google's own data
+APNIC web servers to be around 0.2\% between 2004 and 2008\cite{huston_ipv6_2008}. Google's own data
 collected since 2008 shows a significant uptake in the usage of IPv6, going from
 the 0.2\% recorded in 2008 to 1.3\% as of May 2013, as shown in Figure
 \ref{fig:google-access}. This is an increase of over
@@ -198,23 +199,46 @@ is also shown to have fallen to almost 0\% since 2008.
 \label{fig:google-access}
 \end{figure}
 
-Data gathered to explore the availability of services provided over IPv6
-generally take the form of surveys performed from a single point of a large
-number of websites or domains. 
+Data detailing the availability of services over IPv6 can be used to get a
+measure of how IPv6 is being deployed by the content and service producers and
+providers of the internet. Widespread support of serving content and services
+from IPv6 endpoints is a precursor to increasing end-to-end deployment of IPv6
+across the internet. The types of services that are surveyed for access over
+IPv6 generally include web sites, email servers, and DNS servers
+as the presence of these services can be easily remotely probed. Collecting data
+on service availability is also easier than attempting to collect usage data
+for a large sample size as availability data can be measured using active probes
+that crawl a large number of sites.
 
+Service availability data for web, email, DNS, NTP, Jabber, and email client
+services over IPv6 is presented by Prior, who uses a colour coded scorecard
+approach to indicate the availability of of these services at a number of
+internet and research organisations, along with various technology companies and
+government departments from around the world\cite{prior_ipv6_2012}. This testing is performed by
+attempting to access the services related to the organisations over an IPv6
+connection, using DNS records to derive addresses for all the services. An IPv4
+connection is also made so it is possible to tell whether a service is only
+provided over IPv4 or not at all. No historical data is provided, and the data
+shown is refreshed periodically, but it is of interest to note the number of
+research organisations and World IPv6 Day participants who do not provide their
+services over IPv6. A more extensive survey is presented by Crépin-Leblond at
+ISOC England who has created a thing (insert IPv6 matrix description
+here)\cite{olivier_mj_crepin-leblond_ipv6_2010}.
+Historical data for the matrix is maintained, so it is possible to track service
+availability from when data collection was started in 2010. Nikkhah et al. also
+perform service availability using the Alexa lists but only checking for
+web access, and find that whilst adoption of IPv6 has improved recently
+performance problems exist due to a lack necessary support on the IPv6
+backbone\cite{nikkhah_assessing_2011}.
 
-
--service availability sources, analysis
--explain how ipv6matrix.org works, what it can show
-    -don't forget about the historical data.
--talk about mrp.net, historical records?
-
--active
--connectivity testing: matrix
-
--data sets smaller?
--less historic data?
--data less reliable?
+Using availability data to measure the deployment of IPv6 is a promising
+approach, allowing a fairly complete view across the web of services that
+support IPv6 compared to usage data that is only available for specific sources,
+and it gives a view of deployment that is closer to actual use than the data for
+prefix allocation and BGP route announcement provides. However, this method of
+collecting data is relatively recent so historical records do not stretch as far
+back as those for the other methods and little published
+analysis has been performed on the data.
 
 \subsection{Distributed Active Measurement}
 

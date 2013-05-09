@@ -1,12 +1,85 @@
-\section{Building upon Existing Analysis}
+\section{Analysis}
 
-\begin{itemize}
-    \item can we use different methods together to get a better picture of IPv6
-deployment.
-    \item recent changes, the current state of IPv6, what the measurements are
-currently telling us.
-    \item can we in any way make any useful predictions about the future of IPv6
-deployment (and has anyone else made reasonable forecasts previously)
-    \item spend some time explaining why IPv6 is not currently as deployed as it
-could be.
-\end{itemize}
+\subsection{Comparing Measurements}
+
+The methods of collecting data to track IPv6 deployment presented all have
+advantages and disadvantages, and the different approaches provide a view of
+different facets of the deployment and use of IPv6 on the internet. 
+
+Prefix allocation data gives a complete view of all the addresses allocated by
+IANA and the RIRs, with all RIRs publishing the details of which prefixes they
+have allocated and to whom they have allocated them to. Unfortunately there is
+no way to gain a greater depth than RIR though, so no data is available on how
+LIRs such as ISPs are allocating prefixes out their own prefixes. The allocation
+data is made easily accessible by all the RIRs, and in particular RIPE NCC make
+an effort to make their allocation data accessible and to provide tools to allow
+analysis and generation of statistics on the data\cite{ripe_ncc_ripestat_2011}. Historical data for
+past allocations is complete by definition as the RIRs must keep complete
+records of all the prefix allocations they make to administer allocation. One of
+the most important properties of a measurement approach is how well it
+represents the state of IPv6 deployment, an area in which prefix allocation data
+falls short, as the request for and allocation of prefixes to organisations does
+not imply use of that prefix, and Karpilovsky et al. find that a significant
+proportion of prefix allocated are never announced via BGP so are not
+reachable\cite{karpilovsky_quantifying_2009}.
+However, the data still reveals underlying trends in the deployment of IPv6 as
+the proportion of LIRs that request address space and then advertise a route to
+that prefix remains fairly static.
+
+Routing data detailing the BGP routes announced by ASs across the internet
+provides a good view of how IPv6 is supported on the backbone of the internet,
+and the total amount of address space being advertised, but lacks data from the
+edge of the internet. The BGP tables also vary depending on where the data is
+collected from, as different nodes on the internet have differing view of the
+structure of the internet, particularly if route aggregation is taken into
+account. A number of projects make BGP routing data freely available, collecting
+route information from a number of sources to get a more complete data set. As
+BGP routing data is a well established source of data for performing
+measurements of internet infrastructure, good historical data is generally
+available, supported by both RIRs and IXPs. As a representation of the state of
+deployment of IPv6, routing data gives a more accurate account of which IPv6
+prefixed are in use, although route aggregation may limit the usefulness of data
+in some cases, and even announcing a BGP route for an IPv6 prefix does not
+imply that an LIR or any of its customers are providing any services from those
+addresses.
+
+Data for the availability of services and usage of those services over IPv6 is
+much less complete, in part caused by the de-centralised nature of the internet
+meaning that it is very difficult to capture data from all of the content
+providers and consumers of the internet. However, it is possible to attain a
+reasonably representative sample by looking at the more popular services
+available, as the majority of traffic goes to or from these services making it
+possible for companies like Google to collect usage data from a very wide user
+base, and for service availability data to be collected by iterating through
+publicly available lists of the most visited sites on the web. Service
+availability data is also more difficult to collect than prefix allocation and
+routing data, as it is necessary to actively probe service providers to find if
+their services are available over IPv6. Despite the negative aspects of service
+availability and usage data, it is a very good indicator of progress of IPv6
+transition as the provision and use of services over IPv6 is the definition of
+success for IPv6 deployment. Unfortunately most of the efforts to collect this
+type of data is relatively recent in comparison to collection of routing and
+allocation data, so historical records do not cover as far back as those for
+routing and allocation data.
+
+It is also possible to combine some approaches to permit further analysis,
+particularly in tracking the how changes in IPv6 deployment progress from
+organisations requesting new addresses, to advertising those addresses, to
+actually providing services using those addresses, to users accessing those
+services over IPv6.
+
+%\subsection{Analysis of IPv6 Deployment}
+
+%Returning to the discussion of the history of deployment of IPv6, it is clear
+%that between 1998 when the specification of IPv6 was released and 2008 that the
+%transition from IPv4 to IPv6 was much slower than the community had hoped(cite).
+%Using the measurements and analysis thereof collected it is possible to propose
+%some reasons why this may have been the case. 
+
+
+%\subsection{Using Measurements to Promote Deployment}
+
+%\item can we use different methods together to get a better picture of IPv6 deployment.
+%\item recent changes, the current state of IPv6, what the measurements are currently telling us.
+%\item can we in any way make any useful predictions about the future of IPv6 deployment (and has anyone else made reasonable forecasts previously)
+%\item spend some time explaining why IPv6 is not currently as deployed as it could be.

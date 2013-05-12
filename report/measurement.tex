@@ -2,20 +2,21 @@
 
 \subsection{Prefix Allocation Data}
 
-IPv6 addresses used across the internet are allocated by a hierarchy of organisations.
-The Internet Assigned Numbers Authority (IANA) have authoritative control of the
-allocation of IPv6 addresses, and delegate the allocation of blocks of IPv6
-addresses to the five Regional Internet Registries (RIRs), who administer the
-address space in their region. The RIR for Europe is Réseaux IP Européens
-Network Coordination Centre (RIPE NCC), who in turn are responsible for
+IPv6 addresses used across the internet are assigned by a hierarchy of
+organisations;
+the Internet Assigned Numbers Authority (IANA) having authoritative control of the
+allocation of IPv6 addresses, and delegating the allocation of blocks of IPv6
+addresses to the five Regional Internet Registries (RIRs) such as Réseaux IP Européens
+Network Coordination Centre (RIPE NCC) which is the RIR for Europe. The RIRs administer the
+address space in their region and are responsible for
 allocating addresses to the Local Internet Registries (LIRs). The term prefix
 refers to to the portion of the IPv6 network prefix (the first 64 bits of an
-IPv6 address) that identifies the block of addresses, and generally also
+IPv6 address) that identifies a given block of addresses, and generally also
 includes a prefix length. For example \verb+2001:630:d0::/48+ is the IPv6 prefix held by the
 University of Southampton.
 
 RIPE NCC keep records of and maintain statistics about all of the IPv6 addresses
-allocated since 1999, which can be used to as a metric for how IPv6 is being
+allocated since 1999, which can be used as a metric for how IPv6 is being
 deployed, either by counting the number of addresses allocated or by counting
 the number of prefixes allocated (recording the number of requests made rather
 than the size of subnets asked for). The other RIRs also maintain publicly
@@ -25,20 +26,20 @@ reports of IPv6 allocation worldwide, dated from mid-2006 to
 present day\cite{huston_ipv6_2013}.
 
 Analysis of this data has been performed by a number of sources. Kuhne tracks
-the number of IPv6 allocations from between 1999 and 2010 and identifies three
+the number of IPv6 allocations starting from 1999 until 2010 and identifies three
 phases in the allocations of and hence requests made for IPv6 prefixes since
 RIPE started allocating IPv6 addresses\cite{kuhne_interesting_2010}.
-The first phase is identified from 1999 to
+The first phase is identified between 1999 and
 2002 as "experimental" where IPv6 and the mechanisms to support it were still
 under development. The second phase identified between 2002 and 2007 showed
 steady but low rates of adoption, that Kuhne contributes to early adopters. The
 third phase identified from 2007 to the publication of the data in 2010 showed
-an accelerating allocation rate, contributed to the increasing efforts of RIRs
+an accelerating allocation rate, contributed to the increased efforts of RIRs
 to promote IPv6 in light of the approach of the exhaustion of the IPv4 address
 space. The three phases can be seen on the up to date graph of IPv6 allocations
 by month from RIPE shown in Figure \ref{fig:alloc-month}. Karpilovsky et al. make
 similar conclusions on the allocation data, despite not recognising the
-experimental phase, Karpilovsky notes that number of allocations was linear
+experimental phase, Karpilovsky finds that number of allocations was linear
 until 2008 when the rate of allocation significantly increased\cite{karpilovsky_quantifying_2009}.
 Karpilovsky et
 al. also attempt some analysis of the number of IPv6 address allocated over
@@ -52,16 +53,19 @@ data as it is dominated by a very small number of very large allocations.
 \label{fig:alloc-month}
 \end{figure}
 
-An interesting factor that contributes to how the allocation of IPv6 prefixes is
-affecting the deployment of IPv6 is the policies surrounding the differences
-between Provider Aggregated (PA) and Provider Independent (PI) addresses. In
-IPv6 most unicast addresses are globally aggregatable, to simplify the BGP
+Another factor that may contribute to how the allocation of IPv6 prefixes is
+affecting the deployment of IPv6 are the policies surrounding Provider Independent
+(PI) addresses. In IPv6 most unicast addresses are globally aggregatable, to simplify the BGP
 routing tables and ensure that the protocol can remain scalable despite the
-vastly increased address space. PI addresses remain popular among some
-organisations, as they require addresses to remain contiguous across
-geographically distant sites, or are not willing to renumber if they change
-internet providers. Kuhne notes that following the relaxation of requirements
-regarding PI allocation in Feburary 2012, there was a dramatic increase in the 
+vastly increased address space. These globally aggregatable addresses are
+assigned to end users by their providers, but many organisations want to use an
+address block that will not change if the organisation changes internet
+provider, or want to increase network reliability by having a second link to the
+internet that advertises the same address space. PI address space is a solution
+to both of these issues, as address space is allocated directly from an LIR or
+RIR, but is criticised for increasing the IPv6 routing tables in manner that may
+not be scalable\cite{karrenberg_pi_1995}. Kuhne finds that following the relaxation of requirements
+regarding PI allocation from RIPE NCC in February 2012, there was a dramatic increase in the 
 number of PI allocations and hence overall IPv6 prefix allocations\cite{mirjam_kuhne_update_2012}.
 
 The use of RIR allocation data as a metric for the deployment of IPv6 at first
@@ -75,26 +79,25 @@ for allocation to LIRs, so allocation of prefixes to end users is not shown.
 
 \subsection{BGP Route Data}
 
-Routing of traffic between the individual networks (known as Autonomous
-Systems (ASs)) that make up the Internet is performed using the Border Gateway
-Protocol(BGP). Each BGP router on the Internet holds routing tables that
-detail the ``optimal'' path to all of these networks individual networks.
+Routing of traffic between the individual networks, known as Autonomous
+Systems (ASs), that make up the Internet is performed using the Border Gateway
+Protocol (BGP). Each BGP router on the Internet holds routing tables that
+describe paths to every reachable AS on the internet (although ASs with
+consecutive address space may be aggregated together).
 Each AS announces its existence at the edge of its network, and this
 information is propagated across the Internet.
-
 The information held in the routing tables can be used to gain some measure of
 the deployment of IPv6, as the routing tables provide an effective summary of
-all reachable IPv6 prefixes. This data should give a better view of how IPv6 is
-actually being deployed than just the prefixes allocated\cite{karpilovsky_quantifying_2009}, as an AS must
-have deployed some IPv6 infrastructure to advertise a network whereas receiving
-a prefix allocation does not imply that the organisation is actively using it.
+all reachable IPv6 prefixes. This data should give a better indication of IPv6
+deployment than just the prefixes allocated\cite{karpilovsky_quantifying_2009}, as an AS must
+have deployed some IPv6 infrastructure to advertise a network.
 
 BGP routing data has been made publicly available by a number of sources, most
 notably the routeviews\cite{meyer_route_2005} project hosted by the University of Oregon in the
 US, and the Routing Information Service (RIS) project maintained by RIPE
 NCC\cite{ripe_ncc_routing_????}.
 Each of these projects offer live views of BGP routing data from various points
-around the world, with routeviews retrieving data from 7 IPv6 enable Internet
+around the world, with routeviews retrieving data from 7 IPv6 enabled Internet
 Exchange Points (IXPs) and the hosting University's own connection, whilst RIS
 collects data from 13 IXPs and the RIPE NCC headquarters in Amsterdam. This data
 is collected by deploying routers to these locations that peer with the other
@@ -103,24 +106,28 @@ archiving data since 1999 (although this does not necessarily contain IPv6 data
 from this time) and routeviews archiving data since 2001. 
 %TODO: could talk about looking glasses here
 
-To analyse the BGP routing data and use it to draw conclusions of the state of
+To analyse the BGP routing data and use it to draw conclusions on the state of
 the deployment of IPv6, we can define two simple metrics: the number of BGP
 routes for IPv6 prefixes in the routing tables, and the number of ASs being
 advertised in the routing tables. Huston analyses the number of IPv6 routes
 between 2004 and 2008, and finds that for most of this time the number of IPv6
-routes increases linearly, but also identifies a number of exception events that
+routes increases linearly, but also identifies a number of exceptional events that
 account for large changes in the number of routes advertised such a bug that
 caused 150 abnormal routes to accumulate over time and then all be removed
 simultaneously when the issue was fixed\cite{huston_ipv6_2008}. When making a comparison with IPv4
 routing tables, Huston also finds that there does not appear to be any
-significant growth in IPv6 over IPv4. When analysing the number of ASs announced
+significant growth in IPv6 over IPv4. In contrast, when analysing the number of ASs announced
 in the BGP tables, Dhamdhere et al. find that between 2007 and 2012 the number
-of IPv6 ASs has grown exponentially compared to linear growth in IPv4 ASs, which
+of IPv6 ASs had grown exponentially compared to linear growth in IPv4 ASs, which
 correlates with a trend noticed in the number of ASs by Huston between mid 2007
 and 2008\cite{dhamdhere_measuring_2012}. To complement the findings above, Figure \ref{fig:bgp-rirs} shows the percentage
 of ASs that advertise an IPv6 prefix globally, as collated from the RIS data set
 by RIPE NCC. The change in the rate of IPv6 deployment between 2004-2008 and
-2008-2013 is clearly visible.
+2008-2013 is clearly visible, with little growth in percentage of ASs
+announcing IPv6 routes between 2004 and 2008, then a sharp increase in late 2010
+and early 2011 around the time when the last IPv4 prefix was allocated by IANA.
+The rate of increase slows in 2012, but as of 2013 is still increasing at a rate
+much higher than that of 2004 to 2008.
 
 \begin{figure}[htb]
 \centering
@@ -139,7 +146,7 @@ longer than the average of 52 days for IPv4 prefixes\cite{karpilovsky_quantifyin
 An issue with using BGP tables for measuring IPv6 deployment is use of route
 aggregation. Route aggregation is a feature of IPv6 designed to reduce the size of the
 global routing table by advertising the largest possible prefix where a router
-has routes to a number of component prefixes. This means that a given prefix in
+has routes to a number of consecutive prefixes. This means that a given prefix in
 the BGP routing tables may refer to more than one AS, and in particular
 connections at the edge of the internet are poorly represented in these
 tables\cite{dhamdhere_measuring_2012}.
@@ -157,7 +164,7 @@ IPv6 on the internet whilst not strictly representing the deployment of IPv6 in
 terms of the presence of the necessary infrastructure (although this
 infrastructure must be
 present) gives an insight into the deployment of IPv6 in terms of
-how much the protocol is actually used rather than just how much it is supported.
+how much the protocol is actually used rather than how widely it is supported.
 
 The sources of data and the methods used in measurement of data from the users
 and service providers of the internet generally fall into two categories:
@@ -191,7 +198,9 @@ the 0.2\% recorded in 2008 to 1.3\% as of May 2013, as shown in Figure
 \ref{fig:google-access}. This is an increase of over
 500\% in 5 years, which contrasts strongly against the static rate of IPv6 seen
 in the previous 4 years. The usage of the 6to4 and Teredo tunnelling mechanisms
-is also shown to have fallen to almost 0\% since 2008.
+is also shown to have fallen to almost 0\% since 2008, although it is not
+possible to tell how widely other tunnelling mechanisms such as 6rd are being
+used.
 
 \begin{figure}[htb]
 \centering
@@ -204,7 +213,7 @@ is also shown to have fallen to almost 0\% since 2008.
 Data detailing the availability of services over IPv6 can be used to get a
 measure of how IPv6 is being deployed by the content and service producers and
 providers of the internet. Widespread support of serving content and services
-from IPv6 endpoints is a precursor to increasing end-to-end deployment of IPv6
+from IPv6 endpoints is a precursor to increased end-to-end deployment of IPv6
 across the internet. The types of services that are surveyed for access over
 IPv6 generally include web sites, email servers, and DNS servers
 as the presence of these services can be easily remotely probed. Collecting data
@@ -222,14 +231,14 @@ connection, using DNS records to derive addresses for all the services. An IPv4
 connection is also made so it is possible to tell whether a service is only
 provided over IPv4 or not at all. No historical data is provided, and the data
 shown is refreshed periodically, but it is of interest to note the number of
-research organisations and World IPv6 Day participants who do not provide their
+research organisations and World IPv6 Day participants who do not provide
 services over IPv6. A more extensive survey is presented by Crépin-Leblond at
-ISOC England who has used the Alexa list of the top 1 million accessed web
+ISOC England who has used the Alexa list of the top 1 million most accessed web
 sites on the web\footnote[2]{http://www.alexa.com/topsites}
 to create a web crawler that checks for IPv4 and IPv6 connectivity to services provided
 at the domains of these sites.\cite{olivier_mj_crepin-leblond_ipv6_2010}. This
 data is then linked to geographic data to present an indication of the progress
-of the deployment of IPv6 in each country.
+of the deployment of IPv6 on a country by country basis.
 Historical data for the matrix is maintained, so it is possible to track service
 availability from when data collection was started in 2010. Nikkhah et al. also
 perform service availability using the Alexa lists but only checking for

@@ -27,19 +27,21 @@ IPv6 by end users was very low, with IPv6 traffic observed being equivalent to
 0.3\% of the amount of IPv4 traffic seen\cite{huston_ipv6_2008}. In a similar vein, Domingues 
 et al. conclude that despite the improvements IPv6 offered over IPv4
 and the progress made by network hardware vendors and academic deployments,
-global IPv6 deployment was not on track and that ISPs were shying away from
+global IPv6 deployment was ``not on track'' and that ISPs were shying away from
 deploying IPv6 infrastructure\cite{domingues_is_2007}.
 
 %2013: progress has begun once again.
 Moving towards the present day the pace of IPv6 deployment has now increased,
 something that can be attributed somewhat to the exhaustion of the IPv4 address
-space, and the actions of the RIRs to promote IPv6 more heavily in the run up to
+space, and the actions of the Regional Internet Registries (RIRs) to promote IPv6 more heavily in the run up to
 this event. Since start of 2011 when the Internet Assigned Numbers Authority (IANA)
-allocated the last of its IPv4 addresses to the Regional Internet Registries,
+allocated the last of its IPv4 addresses to the Regional Internet
+Registries\cite{number_resource_organisation_free_2011},
 there have been several other efforts to improve awareness and promote
-deployment of IPv6, include two "World IPv6 Day" events where a collection of
-large internet companies switched to dual-stack configurations on their primary
-services\footnote[1]{http://www.worldipv6launch.org/}.
+deployment of IPv6, including the ``World IPv6 Day'' and ``World IPv6 Launch''
+events organised by the Internet Society (ISOC) where participants including a
+number of large internet companies such as Google, Facebook and Cisco enabled
+dual-stack access on their public facing services\footnote[1]{http://www.worldipv6launch.org/}.
 
 Whilst it is clear that IPv6 is required for the future operation of the
 internet\cite{huston_ipv6_2008}, the progress of the transition from IPv4  has not always proceeded
@@ -50,20 +52,23 @@ that accurately measuring and recording the status of the deployment of IPv6
 is of benefit as a mechanism for trying to work out what went wrong with
 the initial deployment efforts, motivating organisations that have not yet
 transitioned to IPv6 to do so, and to try and predict what the future may hold
-for the deployment of IPv6, whether sufficient deployment can be reached before
+for the deployment of IPv6 and whether sufficient deployment can be reached before
 the IPv4 network becomes unmaintainable\cite{huston_primer_2013}.
 
-Many organisations and individuals have been collecting such data from an
-early stage of the life of IPv6 utilising a variety of sources and a range of
-different metrics, and this paper attempts to summarise those measurements and
-the analysis that has been performed upon them. The specific methods investigated
-are: prefix allocation data from the RIRs, BGP data from internet routers, and
+Many organisations and individuals have been collecting data to try and measure
+the deployment of IPv6 from an
+early stage in the life of IPv6, utilising a variety of sources and a range of
+different metrics. This paper attempts to summarise those measurements and
+the analysis that has been performed upon them. Some measurments investigated
+are: allocation of IPv6 addresses from the RIRs, routes advertised to IPv6
+networks on the internet, and  
 usage and availability data collected by users of the internet.
 The qualities and limitations of each method are assessed, and then an attempt
 is made to correlate data from each of the methods together to attempt to verify
-or draw further conclusions on the deployment of IPv6. Analysis that has
-been performed on older data is also re-applied to new data collected since the
-analysis was originally performed. Finally, it is explored whether these
+or draw further conclusions on the deployment of IPv6. Methods of analysing the
+measurement data that have been demonstrated on older data are 
+also re-applied to data collected since the publication of the original
+analysis work. Finally, it is explored whether these
 measurements are sufficient and useful for progressing
 the deployment of IPv6 and how the measurements could be used in combination to
 predict future developments or provide guidance to the community.

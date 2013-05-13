@@ -257,10 +257,41 @@ analysis has been performed on the data.
 
 \subsection{Distributed Active Measurement}
 
--matrix was active, from one point
--distributed measurements are awesome
--ark, atlas
--use papers to show what is possible with distributed active.
+As an extension to user measurements, it is possible to collect measurements by
+deploying a distributed network of probes around the world to
+gather data from many different parts of the internet. The CAIDA
+Archipelago (Ark)
+project has deployed over 70 probes to locations around the world, with 30 of these
+having an IPv6 connection\cite{caida_archipelago_2013}. The Ark project performs active scanning of every
+IPv6 prefix announced in the BGP routing tables, and uses this data to map the
+topology of the internet. Another distributed monitoring system with a
+larger number of probes is the RIPE Atlas project, with nearly 3000 active
+probes, of which over 800 are IPv6 enabled\cite{ripe_ncc_ripe_2013}. The Atlas probes engage in
+significantly fewer measurements as many are deployed on domestic
+broadband connections by volunteers and perform ping, traceroute and DNS
+queries to a small number of predefined servers, including a number of the DNS
+root servers. Both projects offer embedded hardware probes to the community as a
+means to increase coverage.
 
--very new, shiny
+Musulin and Duisters use a small sample of RIPE Atlas data collected over 9 days
+in 2011 to explore the comparison between IPv6 and IPv4 measurements performed
+by the Atlas nodes\cite{musulin_analysis_2011}. They find that the reliability and performance of IPv6 is
+lower than IPv4, although also state that it was not possible to eliminate all
+tunnelled traffic from the IPv6 measurements, a factor that will affect the
+performance and stability of measurements due to the added complexity of
+tunnelled connections. 
+
+Measurements from distributed monitoring systems can provide a view of the
+internet from a large number of vantage points, but have the drawback of
+requiring significant investment and overhead to produce and distribute
+monitoring probes. This means that only a small number of projects
+have managed to achieve significant distribution of monitoring nodes. The
+RIPE Atlas project have made it possible for researchers to perform their own
+studies using the entire network of probes by allowing Use Defined Measurements
+(UDMs) that are run on many probes\cite{ripe_ncc_user-defined_????}, hence making distributed active
+measurement a viable option for further studies of IPv6.
+
+
+
+
 

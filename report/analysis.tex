@@ -72,11 +72,58 @@ services over IPv6.
 
 \subsubsection{Analysing Service Availability Data}
 
-\subsubsection{Combining Measurements}
+An aspect of service availability data that has not been widely investigated is
+the trends in the data over time; Prior does not keep historical data, and no
+analysis has yet been performed on the service availability data set collected
+by Crépin-Leblond at \verb+ipv6matrix.org+. Data for the IPv6 Matrix is
+collected and stored separately for each top level domain (TLD) and each data set
+is archived by time of measurement completion. The analysis presented here is
+based upon that presented by Crépin-Leblond in
+\cite{olivier_mj_crepin-leblond_ipv6_2011}, finding the percentage of hosts
+surveyed that support access to web, mail, DNS or NTP using IPv6, shown in
+Figure (ref) for the .com, .uk, .net, .org, and .de TLDs. The graph shows
+similar results to the other data sources, with a sharp increase in number of
+IPv6 enabled services in mid-2011. The increase shown in Figure (ref) can almost
+certainly be attributed to the success of ``World IPv6 Launch'' as the largest
+single increase occurs in the first scan completed after the 6th of June 2012
+for each TLD, correlating with the number of content providers that enabled IPv6
+for their services permanently on this date.
 
 \subsubsection{Factors Affecting IPv6 Deployment}
 
+As discussed in the introduction, to ease the challenges faced by organisations
+wanting to move away from IPV4 to IPv6, the NGtrans working group was formed by
+the IETF to produce recommendations for transition tools and policies. Many
+proposals were generated, with some proposals becoming standards, but little
+guidance given on how to use the transition mechanisms effectively. The 6to4
+tunnelling mechanism designed to allow hosts to connect to IPv6 services over
+IPv4 specified in 2001 (cite), is a good example of a transition mechanism that
+has quite possibly hindered deployment of IPv6 rather than helping. 6to4 relies
+on a network of anycast relays to interface between the IPv4 and IPv6 internet,
+a feature intended to allow automatic tunnel configuration, but which in
+practice causes the protocol to be very unstable as not all relays can reach the
+entire IPv6 internet and operation of the relays is not regulated. Aben finds
+that around 15\% of connections made using 6to4 fail (cite), an unacceptable
+level for content providers considering switching their services to dual-stack.
+Figure \ref{fig:google-access} shows that 6to4 usage has become negligible,
+mitigating this issue however 
 
+Steffann et al.
+identify 16 different mechanisms for tunnelling IPv6 traffic over IPv4
+
+Transistion Mechanisms
+
+ISP Motivation
+
+PI vs PA
+
+Performance
+
+Reliability
+
+FUD
+
+\subsubsection{Combining Measurements}
 %Returning to the discussion of the history of deployment of IPv6, it is clear
 %that between 1998 when the specification of IPv6 was released and 2008 that the
 %transition from IPv4 to IPv6 was much slower than the community had hoped(cite).

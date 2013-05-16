@@ -1,27 +1,59 @@
 \section{Conclusions}
 
-To return once again to the current state of IPv6 deployment, the measurements
-presented have shown that although progress of IPv6 deployment was poor until
-2008, since then the rate of adoption has substantially improved. As interest in
+
+To return once again to the current state of IPv6 deployment, substantial
+progress has been made in the last 5 years, with large organisations such as
+Google and Facebook having enough confidence in the reliability, performance,
+and future availability of IPv6 to enable dual-stack networking on their
+services, and the DNS root servers also deploying a dual-stack solution. The
+allocation of IPv6 prefixes, advertisement of routes in the BGP routing tables,
+availability of services and use of those service all continue to increase
+steadily. The movement away from IPv4 to IPv6 only solutions has not been
+explored in this report, but given the current progress of IPv6 deployment it
+would be reasonable to conclude that it will be some time before IPv6 will reach
+sufficient deployment for ISPs and content providers to stop considering IPv4 as
+the primary networking protocol and instead primarily deploy IPv6 natively
+without native IPv4 using transition mechanisms such as NAT64 to communicate
+with IPv4 users.
+
+As interest in
 the state of IPv6 deployment has grown, so has the number of efforts to track
 its progress, with significant input from internet administrative organisations
 and research organisations alike, and the addition of service availability and
 usage data with historical records kept shows progress in measuring IPv6
 deployment, with a view of deployment that is a much closer 
 approximation of the intended goal of measuring transition from IPv4 to IPv6.
-
 It is possible to conclude that the current state of the measurement of IPv6
 deployment is good enough to give an accurate depiction of the how far the
 internet has progressed with deployment of IPv6, and when combined the data
 sources available correlate well and enable further analysis to be performed.
 
-Another conclusion that can be made is that the presentation of data is
-important. Access to data from RIPE NCC for prefix allocation and routing
-advertisements is made easier by the substantial toolset provided for analysing
-and producing graphs from the data, leading to a wealth of analysis on the data
-being performed by researchers. The reason data presentation is important is
-to help provide motivation to organisations to make the transition to supporting
-IPv6. After 2008 when the imminent exhaustion of the IPv4 address space was
+Whilst the measurements methods being used are of a high quality, some
+recommendations can be made to improve how the data can be used and made
+available. Presentation of the measurement data is a field in which some
+organisations invest much more effort than others. Access to data from RIPE
+NCC for prefix allocation and routing
+advertisements is improved by the substantial toolset provided for analysing
+and producing graphs from the data, leading to a greater amount of analysis on the data
+being performed by researchers. An approach such as this to allowing access to
+analysis of the data across other data sources and collection methods may
+provide motivation for further study on the deployment of IPv6, promoting
+further deployment of IPv6. Whilst RIPE NCC make a substantial set of graphs
+available, they do not make all of the data used to create the graphs easily
+available. Availability of data collected from measurements is an area where
+substantial improvements could be made, as currently the only measurement method
+with anything approaching a standard data format is the BGP routing data, which
+is largely supplied in the MRT format, a binary format that requires a C library
+to decode. A possible improvement that could be made to providing access to
+prefix allocation data is to use an open linked data approach, as the nature of prefix
+allocation data is well suited to open linked data, with a large amount of data
+that is appended to but rarely modified. The accessibility of usage data is a
+significant issue, with Google only making a single graph of their data publicly
+available. Improved policies to share data in agreed formats would make the
+compilation and analysis of data from multiple sources using different methods
+substantially easier. 
+
+ After 2008 when the imminent exhaustion of the IPv4 address space was
 widely publicised and the RIRs and other internet organisations increased
 attempts to motivate IPv6 deployment, both through adjustment of policies to
 make the transition process easier and creating greater awareness of IPv6 and
@@ -31,8 +63,12 @@ improve the state of IPv6 deployment.
 
 There are many possibilities for further work in measuring the deployment of
 IPv6, as there is a lack of work done on combining data sets for further
-analysis, and in particular combining the routing and allocation data with
-service availability and usage data. Visibility and presentation of data is
+analysis, for example using the prefix allocation and BGP routing data to
+investigate whether the recent increase in allocation of PI space is reflected by
+advertisement of prefixes in the PI space. Another possible combined measurement
+is to track IPv6 blocks from allocation though advertisement to service
+availability, and investigating patterns in the time between these events.
+Visibility and presentation of data is
 important when trying to promote the deployment of IPv6 and further work to
 create more informative displays from service availability data would improve
 its effectiveness, particularly in regards to a strategy of naming and shaming
@@ -42,4 +78,6 @@ have much better uptake\cite{olivier_mj_crepin-leblond_ipv6_2011}. There could
 also be some potential for
 attempting to make a more formal combination of measurements as an accepted
 metric for IPv6 deployment.
+
+
 

@@ -81,13 +81,24 @@ is archived by time of measurement completion. The analysis presented here is
 based upon that presented by Crépin-Leblond in
 \cite{olivier_mj_crepin-leblond_ipv6_2011}, finding the percentage of hosts
 surveyed that support access to web, mail, DNS or NTP using IPv6, shown in
-Figure (ref) for the .com, .uk, .net, .org, and .de TLDs. The graph shows
+Figure \ref{fig:output} for the .com, .uk, .net, .org, and .de TLDs. The graph shows
 similar results to the other data sources, with a sharp increase in number of
-IPv6 enabled services in mid-2011. The increase shown in Figure (ref) can almost
-certainly be attributed to the success of ``World IPv6 Launch'' as the largest
-single increase occurs in the first scan completed after the 6th of June 2012
+IPv6 enabled services in mid-2011. The increases shown in Figure
+\ref{fig:output} can almost
+certainly be attributed to the success of ``World IPv6 Day'' and ``World IPv6 Launch''
+as the largest
+increases occur in the first scan completed after the 6th of June 2011 and 6th
+June 2012
 for each TLD, correlating with the number of content providers that enabled IPv6
-for their services permanently on this date.
+for their services on these dates.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{img/output.png}
+\caption{Percentage of Hosts with IPv6 enabled for .com, .uk, .net, .org, and
+.uk TLDs}
+\label{fig:output}
+\end{figure}
 
 \subsubsection{Factors Affecting IPv6 Deployment}
 
@@ -97,18 +108,19 @@ the IETF to produce recommendations for transition tools and policies. Many
 proposals were generated, with some proposals becoming standards, but little
 guidance given on how to use the transition mechanisms effectively. The 6to4
 tunnelling mechanism designed to allow hosts to connect to IPv6 services over
-IPv4 specified in 2001 (cite), is a good example of a transition mechanism that
+IPv4 specified in 2001 \cite{rfc3056}, is a good example of a transition mechanism that
 has quite possibly hindered deployment of IPv6 rather than helping. 6to4 relies
 on a network of anycast relays to interface between the IPv4 and IPv6 internet,
 a feature intended to allow automatic tunnel configuration, but which in
 practice causes the protocol to be very unstable as not all relays can reach the
 entire IPv6 internet and operation of the relays is not regulated. Aben finds
-that around 15\% of connections made using 6to4 fail (cite), an unacceptable
+that around 15\% of connections made using 6to4 fail\cite{aben_6to4_2011}, an unacceptable
 level for content providers considering switching their services to dual-stack.
 Figure \ref{fig:google-access} shows that 6to4 usage has become negligible,
 mitigating the stability issues. However, issues such as this one combined with
 the large number of transition methods available; Steffann et al.
-identifying 16 different mechanisms for tunnelling IPv6 traffic over IPv4,
+identifying 16 different mechanisms for tunnelling IPv6 traffic over IPv4
+\cite{draft-steffann-tunnels},
 contribute to FUD surrounding making the transition to IPv6, as content
 providers are unwilling to serve content over IPv6 if this will cause some users
 to become unable to access the content.

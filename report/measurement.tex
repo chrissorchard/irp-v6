@@ -2,7 +2,7 @@
 
 \subsection{Prefix Allocation Data}
 
-IPv6 addresses used across the internet are assigned by a hierarchy of
+IPv6 addresses used across the Internet are assigned by a hierarchy of
 organisations;
 the Internet Assigned Numbers Authority (IANA) having authoritative control of the
 allocation of IPv6 addresses, and delegating the allocation of blocks of IPv6
@@ -59,9 +59,9 @@ affecting the deployment of IPv6 are the policies surrounding Provider Independe
 routing tables and ensure that the protocol can remain scalable despite the
 vastly increased address space. These globally aggregatable addresses are
 assigned to end users by their providers, but many organisations want to use an
-address block that will not change if the organisation changes internet
+address block that will not change if the organisation changes Internet
 provider, or want to increase network reliability by having a second link to the
-internet that advertises the same address space. PI address space is a solution
+Internet that advertises the same address space. PI address space is a solution
 to both of these issues, as address space is allocated directly from an LIR or
 RIR, but is criticised for increasing the IPv6 routing tables in manner that may
 not be scalable\cite{karrenberg_pi_1995}. Kuhne finds that following the relaxation of requirements
@@ -82,7 +82,7 @@ for allocation to LIRs, so allocation of prefixes to end users is not shown.
 Routing of traffic between the individual networks, known as Autonomous
 Systems (ASs), that make up the Internet is performed using the Border Gateway
 Protocol (BGP). Each BGP router on the Internet holds routing tables that
-describe paths to every reachable AS on the internet (although ASs with
+describe paths to every reachable AS on the Internet (although ASs with
 consecutive address space may be aggregated together).
 Each AS announces its existence at the edge of its network, and this
 information is propagated across the Internet.
@@ -148,7 +148,7 @@ aggregation. Route aggregation is a feature of IPv6 designed to reduce the size 
 global routing table by advertising the largest possible prefix where a router
 has routes to a number of consecutive prefixes. This means that a given prefix in
 the BGP routing tables may refer to more than one AS, and in particular
-connections at the edge of the internet are poorly represented in these
+connections at the edge of the Internet are poorly represented in these
 tables\cite{dhamdhere_measuring_2012}.
 
 
@@ -156,25 +156,25 @@ tables\cite{dhamdhere_measuring_2012}.
 \subsection{User Measurements}
 
 The first two methods explored look at data based on the
-infrastructure of the internet. Another perspective can be a gained by analysing
-data from the end users of the internet, whether that be individuals browsing
+infrastructure of the Internet. Another perspective can be a gained by analysing
+data from the end users of the Internet, whether that be individuals browsing
 the web, organisations serving those web pages, or email servers sending mail
-across the internet. Data concerning the usage and availability of services over
-IPv6 on the internet whilst not strictly representing the deployment of IPv6 in
+across the Internet. Data concerning the usage and availability of services over
+IPv6 on the Internet whilst not strictly representing the deployment of IPv6 in
 terms of the presence of the necessary infrastructure (although this
 infrastructure must be
 present) gives an insight into the deployment of IPv6 in terms of
 how much the protocol is actually used rather than how widely it is supported.
 
 The sources of data and the methods used in measurement of data from the users
-and service providers of the internet generally fall into two categories:
+and service providers of the Internet generally fall into two categories:
 enumerating and analysing the availability of services over IPv6 and measuring
 how much these available services are being used. Availability data can be
-collected by actively crawling the internet, whereas usage data is generally
+collected by actively crawling the Internet, whereas usage data is generally
 collected via passive means such as Netflow\cite{shen_observations_2009} or by analysing server logs.
 
 To gather data about the use of IPv6 by consumers, and the availability of IPv6
-networking to end users, Colitti et al. at Google added code to the Google.com
+networking to end users, Colitti et al. at Google added code to the www.google.com
 website that tested IPv6 connectivity from browsers that connected to it. The
 client code connected to both a dual-stack host and an IPv4 host to find out
 whether IPv6 or IPv4 were preferred when both were available\cite{colitti_evaluating_2010}. Colitti et al.
@@ -212,9 +212,9 @@ used.
 
 Data detailing the availability of services over IPv6 can be used to get a
 measure of how IPv6 is being deployed by the content and service producers and
-providers of the internet. Widespread support of serving content and services
+providers of the Internet. Widespread support of serving content and services
 from IPv6 endpoints is a precursor to increased end-to-end deployment of IPv6
-across the internet. The types of services that are surveyed for access over
+across the Internet. The types of services that are surveyed for access over
 IPv6 generally include web sites, email servers, and DNS servers
 as the presence of these services can be easily remotely probed. Collecting data
 on service availability is also easier than attempting to collect usage data
@@ -224,7 +224,7 @@ that crawl a large number of sites.
 Service availability data for web, email, DNS, NTP, Jabber, and email client
 services over IPv6 is presented by Prior, who uses a colour coded scorecard
 approach to indicate the availability of of these services at a number of
-internet and research organisations, along with various technology companies and
+Internet and research organisations, along with various technology companies and
 government departments from around the world\cite{prior_ipv6_2012}. This testing is performed by
 attempting to access the services related to the organisations over an IPv6
 connection, using DNS records to derive addresses for all the services. An IPv4
@@ -259,12 +259,12 @@ analysis has been performed on the data.
 
 As an extension to user measurements, it is possible to collect measurements by
 deploying a distributed network of probes around the world to
-gather data from many different parts of the internet. The CAIDA
+gather data from many different parts of the Internet. The CAIDA
 Archipelago (Ark)
 project has deployed over 70 probes to locations around the world, with 30 of these
 having an IPv6 connection\cite{caida_archipelago_2013}. The Ark project performs active scanning of every
 IPv6 prefix announced in the BGP routing tables, and uses this data to map the
-topology of the internet. Another distributed monitoring system with a
+topology of the Internet. Another distributed monitoring system with a
 larger number of probes is the RIPE Atlas project, with nearly 3000 active
 probes, of which over 800 are IPv6 enabled\cite{ripe_ncc_ripe_2013}. The Atlas probes engage in
 significantly fewer measurements as many are deployed on domestic
@@ -282,7 +282,7 @@ performance and stability of measurements due to the added complexity of
 tunnelled connections. 
 
 Measurements from distributed monitoring systems can provide a view of the
-internet from a large number of vantage points, but have the drawback of
+Internet from a large number of vantage points, but have the drawback of
 requiring significant investment and overhead to produce and distribute
 monitoring probes. This means that only a small number of projects
 have managed to achieve significant distribution of monitoring nodes. The

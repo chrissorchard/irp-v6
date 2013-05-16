@@ -1,6 +1,6 @@
 \section{Analysis}
 
-\subsection{Comparing Measurements}
+\subsection{Comparing Measurement Methods}
 
 The methods of collecting data to track IPv6 deployment presented all have
 advantages and disadvantages, and the different approaches provide a view of
@@ -92,7 +92,7 @@ for their services permanently on this date.
 \subsubsection{Factors Affecting IPv6 Deployment}
 
 As discussed in the introduction, to ease the challenges faced by organisations
-wanting to move away from IPV4 to IPv6, the NGtrans working group was formed by
+wanting to move away from IPV4 to IPv6, the NGTrans working group was formed by
 the IETF to produce recommendations for transition tools and policies. Many
 proposals were generated, with some proposals becoming standards, but little
 guidance given on how to use the transition mechanisms effectively. The 6to4
@@ -106,24 +106,60 @@ entire IPv6 internet and operation of the relays is not regulated. Aben finds
 that around 15\% of connections made using 6to4 fail (cite), an unacceptable
 level for content providers considering switching their services to dual-stack.
 Figure \ref{fig:google-access} shows that 6to4 usage has become negligible,
-mitigating this issue however 
+mitigating the stability issues. However, issues such as this one combined with
+the large number of transition methods available; Steffann et al.
+identifying 16 different mechanisms for tunnelling IPv6 traffic over IPv4,
+contribute to FUD surrounding making the transition to IPv6, as content
+providers are unwilling to serve content over IPv6 if this will cause some users
+to become unable to access the content.
 
-Steffann et al.
-identify 16 different mechanisms for tunnelling IPv6 traffic over IPv4
+A major concern for both content providers and ISPs is the performance and
+reliability of IPv6 compared to IPv4. In particular, organisations do not want
+customers/clients to become unable to access any services that organisation
+provides as a result of deploying their services onto IPv6. Colitti et al. find
+that the latency of IPv6 connections to google.com is slightly lower than that
+of IPv4 connections, despite tunnelling overheads, although Colitti et al. also
+state that this may be due to the relatively high proportion of research
+institutions using IPv6. Dhamdhere et al. find that IPv6 performance is
+comparable where the paths taken across the Internet are identical, but IPv6 may
+perform poorly in comparison if the path is longer due to tunnelling or lack of support in
+backbone links. This highlights the importance of IPv6 support on Internet
+backbone links as shown by the allocation and BGP data.
 
-Transistion Mechanisms
-
-ISP Motivation
-
-PI vs PA
-
-Performance
-
-Reliability
-
-FUD
+When conducting analysis on measurement data for IPv6 deployment and attempting
+to determine factors that may be affecting the progress of deployment, technical
+factors are primarily explored. It is however important not to dismiss the
+effect business factors may have on the state of IPv6 deployment. Business
+factors that affect content providers include reaching clients that only have
+IPv6, something that will become increasingly commonplace due to the exhaustion
+of the IPv4 address space, the ability for an organisation to control its own
+address space as many organisation may not want to be reliant on their ISP to
+provide addressing so PI address space may be viewed as a requirement by these
+organisations. Service providers will also consider the possible expense
+involved when considering deploying IPv6, although this should not be great in
+terms of replacing hardware and software as IPv6 support is widely available in
+most modern network hardware and server software. However, there is likely to be
+some cost involved in planning the deployment and applying the necessary
+configuration changes. ISPs have a slightly different set of business concerns
+and must consider how to meet the demand for address space from customers, with
+limited options for supplying further IPv4 address space. Expense is a major
+factor for ISPs, as deploying a fully IPv6 capable infrastructure may be
+prohibitively expensive. Transition tools such as 6rd, a tunnelling mechanism
+designed to let an ISP tunnel IPv6 traffic from the edge of their network to the
+ISPs IPv6 Point of Presence (POP) over existing IPv4 infrastructure using a
+specialisation of the 6to4 protocol, allow ISPs to incrementally upgrade
+infrastructure to IPv6, as successfully demonstrated by free.fr(cite). One other
+factor an ISP may consider is demand for IPv6 from customers wanting to access
+content or serve content using IPv6, a factor absent from many consumer ISPs
+where customers do not necessarily care about how content is delivered at the
+network layer, only that content delivery works at the application layer. Events
+such as World IPv6 Day aim to educate users of the web about why IPv6 is
+necessary and how it affects them.
 
 \subsubsection{Combining Measurements}
+
+
+
 %Returning to the discussion of the history of deployment of IPv6, it is clear
 %that between 1998 when the specification of IPv6 was released and 2008 that the
 %transition from IPv4 to IPv6 was much slower than the community had hoped(cite).
